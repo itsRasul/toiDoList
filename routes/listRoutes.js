@@ -1,8 +1,8 @@
 const express = require('express');
 const listController = require('../controllers/listController');
 
-const router = express.Router;
+const router = express.Router();
 
-router.route('/').get(listController.getAllList);
+router.route('/').get(listController.getAllLists);
 
 module.exports = router;
