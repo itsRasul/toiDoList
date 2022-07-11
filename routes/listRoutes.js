@@ -3,6 +3,12 @@ const listController = require('../controllers/listController');
 
 const router = express.Router();
 
-router.route('/').get(listController.getAllLists);
+router.route('/').get(listController.getAllLists).post(listController.createList);
+
+router
+  .route('/:id')
+  .get(listController.getOneList)
+  .patch(listController.updateList)
+  .delete(listController.deleteList);
 
 module.exports = router;

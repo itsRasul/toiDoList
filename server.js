@@ -11,4 +11,4 @@ mongoose
   })
   .then(() => console.log('mongoose is running well...'));
 
-app.listen(3000, () => console.log(`i'm listening on port: 3000`));
+app.listen(process.env.PORT, () => console.log(`i'm listening on port: 3000`));
