@@ -11,12 +11,6 @@ const listSchema = new mongoose.Schema({
     type: String,
     minLength: [3, 'description has to be more than 3 charecter'],
   },
-  tasks: [
-    {
-      type: mongoose.Types.ObjectId,
-      ref: 'Task',
-    },
-  ],
 });
 
 const List = mongoose.model('List', listSchema);

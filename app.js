@@ -3,6 +3,7 @@ const errorController = require('./controllers/errorController');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const listRouter = require('./routes/listRoutes');
+const taskRouter = require('./routes/taskRoutes');
 
 const app = express();
 
@@ -12,12 +13,9 @@ app.use(cookieParser());
 app.use(morgan('dev'));
 
 app.use('/api/v1/lists', listRouter);
-app.use('/', (req, res, next) => {
-  console.log('hey');
-  res.status(200).send('jhey');
-  next();
-});
+app.use('/api/v1/tasks', taskRouter);
 
+// error handling
 app.use(errorController);
 
 module.exports = app;

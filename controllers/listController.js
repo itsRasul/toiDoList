@@ -2,7 +2,6 @@ const AppError = require('../utils/AppError');
 const APIFeature = require('../utils/APIFeature');
 const catchAsync = require('../utils/catchAsync');
 const List = require('../models/listModel');
-const { RuleTester } = require('eslint');
 
 exports.getAllLists = catchAsync(async (req, res, next) => {
   const feature = new APIFeature(List.find(), req.query)
@@ -28,7 +27,6 @@ exports.getOneList = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
   const list = await List.findById(id);
-  // .populate('tasks');
 
   if (!list) {
     throw new AppError('list is not found with this id!', 404);
