@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "todollist",
+  "version": "1.0.0",
+  "description": "users can manage their tasks",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsRasul/toiDoList.git"
+  },
+  "keywords": [
+    "to",
+    "do",
+    "list"
+  ],
+  "author": "rasul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsRasul/toiDoList/issues"
+  },
+  "homepage": "https://github.com/itsRasul/toiDoList#readme"
+}
