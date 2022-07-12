@@ -8,9 +8,6 @@ const taskRouter = require('./routes/taskRoutes');
 const app = express();
 
 app.use(express.json());
-app.use(cookieParser());
-
-app.use(morgan('dev'));
 
 app.use('/api/v1/lists', listRouter);
 app.use('/api/v1/tasks', taskRouter);

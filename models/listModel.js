@@ -11,6 +11,10 @@ const listSchema = new mongoose.Schema({
     type: String,
     minLength: [3, 'description has to be more than 3 charecter'],
   },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 const List = mongoose.model('List', listSchema);

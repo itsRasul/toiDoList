@@ -12,7 +12,15 @@ exports.getAllTasks = catchAsync(async (req, res, next) => {
     filter.list = req.params.listId;
   }
 
-  const tasks = await Task.find(filter);
+  const feature = new APIFeature(Task.find(filter), req.query)
+    .filter()
+    .sort()
+    .paginate()
+    .limit()
+    .fields()
+    .populate();
+
+  const tasks = await feature.query;
 
   res.status(200).json({
     status: 'success',
@@ -56,6 +64,7 @@ exports.createTask = catchAsync(async (req, res, next) => {
     list: listId,
     title: req.body.title,
     status: req.body.status,
+    order: req.body.order,
   };
 
   const task = await Task.create(data);

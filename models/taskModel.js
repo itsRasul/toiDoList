@@ -7,13 +7,21 @@ const taskSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['done', 'undone', 'processing'],
+    enum: ['done', 'undone'],
     default: 'undone',
   },
   list: {
     type: mongoose.Types.ObjectId,
     ref: 'List',
     required: [true, 'the task has to belongs to a list'],
+  },
+  order: {
+    type: Number,
+    default: 0,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
   },
 });
 
